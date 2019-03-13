@@ -1,0 +1,30 @@
+<h1>Search result for "<%= search %>"</h1>
+
+
+<div id="dialogoverlay"></div>
+
+<div class="overlay-message">
+
+    <div class="card card-body w-100 m-auto">
+          <p> </p>
+        <button class="btn btn-primary  cancel-overlay">OK</button>
+    </div>
+</div>
+
+<div class="search-container">
+
+  <% books.forEach(function(book) { %>
+
+
+  <div class="card w-50 book-card">
+      <div class="card-body">
+        <img src="<%= book.image %>">
+        <p class="card-text"><b> <%= book.title  %> </b> <small> by <%= book.author  %> </small> </p>
+        <a class="btn btn-primary" href="/book/<%= book.id %>">View</a>
+    </div>
+
+  </div>
+
+    <% }); %>
+
+</div>

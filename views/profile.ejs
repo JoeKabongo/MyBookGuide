@@ -1,0 +1,104 @@
+
+<div id="dialogoverlay"></div>
+
+<div class="overlay-message">
+    <div class="card card-body w-100 m-auto">
+
+        <form  method="post" action='/users/editprofile' id="confirm-editprofile">
+            <div class="form-group">
+                <label for="name">Enter password to confirm changes</label>
+                <input
+                  required
+                  type="password"
+                  id="verify-password"
+                  name="verify_password"
+                  class="form-control"
+                  placeholder="type current password"
+                />
+              </div>
+              <div class="hide"> 
+                  <input name="new_name" id="confirm-edit-name">
+                  <input name="new_email" id="confirm-edit-email">
+                  <input name="new_password" id="confirm-edit-password">
+              </div>
+             
+
+          
+          <button type="submit" class="btn btn-primary btn-block">confirm changes</button>
+        </form>
+        <br>
+        <button class="btn btn-primary cancel-overlay">Cancel</button>
+    </div>
+</div>
+<div class="profile">
+        <table class="table w-50" style="background-color:white; margin:10px auto;">
+                <thead class="thead-dark">
+                  <tr>
+                       
+                      <th></th>
+                      <th> Profile </th>
+                      
+                  </tr>
+                </thead>
+                <tbody>
+                 
+                  <tr>
+                    <th> Name </th>
+                    <td> <%= user.name %></td>
+                  </tr>
+
+                  <tr>
+                      <th> Email </th>
+                      <td> <%= user.email %> </td>
+                  </tr>
+                </tbody>
+          </table>
+
+          <div class="card card-body w-50 m-auto">
+              <% include ./partials/messages %>
+
+              <h1>Edit profile</h1>
+
+              <form id="editprofile">
+                <div class="form-group">
+                  <label for="email">New email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="new Email"
+                  />
+                </div>
+
+                <div class="form-group">
+                    <label for="name">New Name </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="form-control"
+                      placeholder="new name"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                      <label for="name">New password</label>
+                      <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="new password"
+                      />
+                    </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Save changes</button>
+              </form>
+            </div>
+
+</div>
+
+
+<style>
+</style>

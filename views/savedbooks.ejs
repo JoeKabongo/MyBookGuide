@@ -1,0 +1,36 @@
+<h1>Saved books </h1>
+
+<div id="dialogoverlay"></div>
+
+<div class="overlay-message">
+
+    <div class="card card-body w-100 m-auto">
+          <p> </p>
+        <button class="btn btn-primary  cancel-overlay">OK</button>
+    </div>
+</div>
+<div class="search-container">
+
+        <% if(typeof books == 'undefined'){ %>
+             <p>You have not added any books yet</p>
+        <% } else { %>
+        
+
+            <% books.forEach(function(book) { %>
+                <div class="card w-50 book-card">
+                    <div class="card-body" style="text-align:center;">
+                      <img src="<%= book.image %>">
+                      <p class="card-text"><b> <%= book.title  %> </b> <small> by <%= book.author  %> </small> </p>
+                    </div>
+                    <form method="DELETE" class="removebook-form">
+                        <input value="<%= book.id %>" class="hide">
+                        <a class="btn btn-primary" href="/book/<%= book.id %>">View</a>
+                        <button class="btn btn-primary" type="submit"> <i class="fas fa-times"></i></button>
+                    </form>
+
+                </div>
+            <% }); %>
+        <% } %>
+      
+      </div>
+      

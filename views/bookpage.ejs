@@ -1,0 +1,42 @@
+<div class="card w-75 book-page">
+        <% include ./partials/messages %>
+
+        <div class="card-body">
+        <div class="book-header">
+            <img src="<%= book.image %>">
+            <p class="card-text" style="font-size:30px;"><b> <%= book.title  %> </b> </p>
+            <p style="font-size:20px;"> <small> by  </small> <%= book.author  %>  </p>
+            <% if(added) {%>
+                <form method="POST" action="/users/removeBook">
+                    <input class="hide" name="reload">
+                    <input class="hide" name="book_id" value="<%= book.id %>">
+                    <button type="submit" class="btn btn-primary"> Remove from list  </button>
+                </form>
+            <% } else{  %>
+                <form action="/users/addBook" method="POST">
+                    <input class="hide" name="book_id" value="<%= book.id %>">
+                    <button type="submit" class="btn btn-primary"> Add to your books </button>
+                </form>
+            <% } %>
+           
+
+        </div>
+       
+
+        <div class="card-text">
+                <b> Description: </b>  <%- book.description  %>
+        </div>
+
+        <hr>
+
+        <div class="other-book-info">
+            <p> <b>Publisher: </b> <%= book.publishers %></p>
+            <p> <b> Published on: </b> <%= book.date %></p>
+            <p> <b> Pages: </b> <%= book.pages %></p>
+            <p> <b> Categories: </b> <%= book.category %></p>
+        </div>
+
+        
+
+        </div>
+</div>
