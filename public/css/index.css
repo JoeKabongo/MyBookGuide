@@ -15,9 +15,40 @@ h1{
   z-index: 10;
 }
 
+.small-screen-nav{
+  display: none;
+}
+
+@media(max-width:750px){
+  .large-screen-nav{
+    display:none;
+  }
+
+  .small-screen-nav{
+    display:inline-flex;
+  }
+  .form{
+    width: 90% !important;
+    margin: 0 auto;
+  }
+
+  .profile .table{
+    width: 90% !important;
+  }
+
+  .profile .card{
+    width: 90% !important;
+  }
+
+  .book-page{
+    width: 100% !important;
+  }
+}
+
 .logo{
 font-size: 15px;
 }
+
 
 
 .search-container{
@@ -32,10 +63,15 @@ font-size: 15px;
   background: #EEF4F8;
 }
 
+.navbar-collapse{
+  float: left !important;
+}
+
 .home-book-container{
   display: flex !important;
   flex-wrap: wrap !important;
   width: 90%;
+  margin: 0 auto;
 
 }
 

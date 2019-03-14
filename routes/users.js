@@ -286,7 +286,7 @@ router.post('/removeBook', (req, res) => {
   user.favoritBooks = user.favoritBooks.filter(item => item!= book_id);
   user.save();
 
-  req.flash('success_msg', 'Book has been added to your list');
+  req.flash('success_msg', 'Book has been removed to your list');
   res.redirect(`/book/${book_id}`);
 });
 

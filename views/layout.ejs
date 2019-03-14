@@ -17,24 +17,52 @@
     <title><%= title %></title>  
   </head>
   <body>
-      <nav class="navbar navbar-light bg-light ">
+    <nav class="navbar navbar-light  bg-light large-screen-nav">
         <a class="nav-link logo" href="/">  MyBookGuide  </a>
         <form class="form-inline" action="/search" method="post">
-         <input class="form-control mr-sm-2" type="search" placeholder="Search a book" aria-label="Search" name="book">
-         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mr-sm-2" type="search" placeholder="Search a book" aria-label="Search" name="book">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <a class="nav-link" href="/users/mybooks" > My books</a>
-        <a class="nav-link" href="/users/profile"> <i class="fas fa-user"></i></a>
-        <% if(typeof user != 'undefined') {%>
-         
-          <a class="nav-link" href="/users/logout" > Logout </a>
-        <% } else { %>
-          <a class="nav-link" href="/users/register" > Register/Login </a>
-        <% } %>
+       
 
-      </nav>
+         
+          <a class="nav-link" href="/users/mybooks" > My books</a>
+          <a class="nav-link" href="/users/profile"> <i class="fas fa-user"></i></a>
+          <% if(typeof user != 'undefined') {%>
+          
+            <a class="nav-link" href="/users/logout" > Logout </a>
+          <% } else { %>
+            <a class="nav-link" href="/users/register" > Register/Login </a>
+          <% } %>
+
+      </nav> 
+
       
 
+      <nav class="navbar navbar-expand-lg navbar-light bg-light small-screen-nav">
+          <a class="nav-link logo" href="/">  MyBookGuide  </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <a class="nav-link" href="/users/mybooks" > My books</a>
+              <a class="nav-link" href="/users/profile"> <i class="fas fa-user"></i></a>
+              <% if(typeof user != 'undefined') {%>
+              
+                <a class="nav-link" href="/users/logout" > Logout </a>
+              <% } else { %>
+                <a class="nav-link" href="/users/register" > Register/Login </a>
+              <% } %>
+              <form class="form-inline" action="/search" method="post">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search a book" aria-label="Search" name="book">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+          </div>
+        </nav>
+
+   
+      
     <main><%- body %></main>
 
    
