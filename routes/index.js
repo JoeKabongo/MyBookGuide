@@ -10,7 +10,6 @@ const Book = require("../models/Book");
 // Dashboard
 router.get('/', (req, res) =>{
 
-
    const user = req.user;
    const title = "Home page"
    Book.find()
@@ -19,7 +18,6 @@ router.get('/', (req, res) =>{
 
     }).catch(error => {
         console.log(error);
-
     });
 
 });
@@ -45,7 +43,6 @@ router.post('/search', (req, res) => {
                         link: body.items[i].volumeInfo.infoLink,
                         id:body.items[i].id
                     }
-
                     try{
                         book["image"] = body.items[i].volumeInfo.imageLinks.thumbnail;
                     }catch(e){

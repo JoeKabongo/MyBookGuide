@@ -1,6 +1,8 @@
 body{
- background-image: url("../images/bodybackground.jpg");
+ /* background-image: url("../images/bodybackground.jpg"); */
+  background-image: url("https://images.unsplash.com/22/brick-wall.JPG?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
  padding-top: 70px; 
+ /* background: #3b5998; */
 }
 
 h1{
@@ -13,6 +15,7 @@ h1{
   top:0px;
   width: 100%;
   z-index: 10;
+  background: #FFF;
 }
 
 .small-screen-nav{
@@ -78,12 +81,14 @@ font-size: 15px;
 
 
 .book-card{
-  background:#EEF4F8;
+  background: #fff;
+  /* background:#EEF4F8; */
   text-align: center;
   width: 400px !important;
   margin: 10px;
   padding: 2px;
   overflow: scroll;
+  border: 2px solid #ebebeb;
 
 }
 
@@ -131,7 +136,7 @@ font-size: 15px;
 
 .book-page{
   margin:0 auto;
-  background:#EEF4F8;
+  background: #ffffff;;
 }
 
 .book-header{
